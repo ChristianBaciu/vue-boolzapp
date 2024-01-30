@@ -79,6 +79,14 @@ img{
     overflow-x: hidden;
 }
 
+.selezioanto:hover{
+    background-color: rgb(240, 250, 250);
+}
+
+.chatSelect{ /* per js */
+    background-color: #e6ebeb;
+}
+
 /* invia e scrivi */
 .profiloChat{
     width: 100%;
@@ -110,10 +118,6 @@ img{
     background-color: #ffffff;
     width: 35%;
 }
-
-
-
-
 
 /* tastiera */
 .tastiera{
