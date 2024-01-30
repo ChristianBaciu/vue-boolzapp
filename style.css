@@ -7,6 +7,7 @@
 body{
     background-color: #d7d7d2;
     height: 100vh;
+    font-size: 14px;
 }
 
 .contenitore{
@@ -30,22 +31,47 @@ body{
     background-color: lightblue;
 }
 
+
 .profilo,
 .chatProfilo
 {
-    background-color: yellow;
+    background-color: #e9e9e9;
     height: 60px;
-    border: 1px solid black;
+}
+
+.profilo{
+    border-right: 1px solid #e4e4e4;
+}
+
+
+.profilo i,
+.chatProfilo i{
+    color: #afafaf;
+}
+
+img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
 }
 
 .notifiche{
-    background-color: chartreuse;
+    background-color: #8cd7fa;
     height: 70px;
 }
 
+.notifiche i{
+    padding: 18px;
+    background-color: white;
+    border-radius: 50%;
+    color: #8cd7fa;
+}
+
+.attivita{
+    font-size: 10px;
+}
+
 .cerca{
-    background-color: violet;
-    height: 50px;
 }
 
 .persone{
