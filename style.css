@@ -3,3 +3,62 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: #d7d7d2;
+    height: 100vh;
+}
+
+.contenitore{
+    background-color: red;
+    width: 1200px;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.chatPersone{
+    background-color: orange;
+    width: calc(1200px - 600px);
+}
+
+.chatMichele{
+    width: 100%;
+    background-color: lightblue;
+}
+
+.profilo,
+.chatProfilo
+{
+    background-color: yellow;
+    height: 60px;
+    border: 1px solid black;
+}
+
+.notifiche{
+    background-color: chartreuse;
+    height: 70px;
+}
+
+.cerca{
+    background-color: violet;
+    height: 50px;
+}
+
+.persone{
+    background-color: azure;
+    height: calc(100% - 180px)
+}
+
+.ciao{
+    background-color: chocolate;
+    height: calc(100% - 120px);
+}
+
+.tastiera{
+    background-color: cornflowerblue;
+    height: 60px;
+}
