@@ -67,7 +67,7 @@ img{
 
 /* cerca nome */
 .cerca{
-    background-color: rosybrown;
+    background-color: white;
     height: 50px;
 }
 
@@ -92,8 +92,38 @@ img{
     overflow-x: hidden;
 }
 
+.verde,
+.bianco
+{
+    padding: 5px;
+    height: 10%;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.verde{
+    background-color: #d2f5b9;
+    width: 35%;
+}
+
+.bianco{
+    background-color: #ffffff;
+    width: 35%;
+}
+
+
+
+
+
 /* tastiera */
 .tastiera{
-    background-color: cornflowerblue;
+    background-color: #f0ebe6;
     height: 60px;
+}
+
+.tastiera i{
+    color: #697373;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 }

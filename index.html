@@ -15,7 +15,7 @@
 <body>
 
     <div id="app" class="">
-
+        
         <div class="contenitore mx-auto d-flex">
 
             <!-- la nostra chat -->
@@ -53,7 +53,16 @@
                 </div>
 
                 <!-- cerca nome -->
-                <div class="cerca">
+                <div class="cerca d-flex align-items-center justify-content-center px-2">
+
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass text-secondary"></i></span>
+                        <input class="form-control" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+
+
+
+
                     <!-- <nav class="navbar bg-body-tertiary">
                         <form class="container-fluid">
                             <div class="input-group">
@@ -212,13 +221,44 @@
                 </div>
 
                 <!-- messaggi -->
-                <div class="chat">
-                    ciao11
+                <div class="chat d-flex flex-column pt-4 px-5">
+
+                    <div class="verde d-flex align-items-center ps-2 m-2 ms-auto">
+                        <div class="w-100">
+                            Hai portato a spasso il cane?
+                            <span class="d-flex justify-content-end">
+                                00:00
+                            </span>    
+                        </div>
+                    </div>
+                    
+                    <div class="verde d-flex align-items-center ps-2 m-2 ms-auto">
+                        <div class="w-100">
+                            Ricordati di stendere i panni
+                            <span class="d-flex justify-content-end">
+                                00:00
+                            </span>    
+                        </div>
+                    </div>
+
+                    <div class="bianco d-flex align-items-center ps-2 m-2">
+                        <div class="w-100">
+                            Tutto fatto!
+                            <span class="d-flex justify-content-end">
+                                00:00
+                            </span>    
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- tastiera -->
-                <div class="tastiera">
-                    abcd
+                <div class="tastiera d-flex align-items-center justify-content-between">
+                    <i class="fa-regular fa-face-smile"></i>
+
+                    <input class="form-control w-100" placeholder="Scrivi un messaggio">
+    
+                    <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
 
