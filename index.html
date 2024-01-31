@@ -60,10 +60,39 @@
                     </div>
                 </div>
 
-                <!-- contatti -->
+                <!-- contatti n.-->
                 <div class="persone">
+
                     <section>
+
+
                         <!-- michele -->
+                        <div class="selezioanto d-flex justify-content-between border-top"
+                        
+                        v-for="(element,index) in contacts"
+                        >
+                            <div class="d-flex p-2">
+                                <img class="ms-2" src="{{element.contacts.avatar}}" alt="">
+                                <div>
+                                    <span class="ms-2">
+                                        {{element.name}}
+                                        <!-- Michele -->
+                                    </span>
+                                    <br>
+                                    <span class="ms-2 text-secondary testoPiccolo">Ultimo messaggio inviato</span>
+                                </div>    
+                            </div>
+                            <div class="me-3 mt-2">
+                                <span class="testoPiccolo text-secondary">00:00</span>
+                            </div>
+                        </div>
+        
+
+
+                    </section>
+
+                    <!-- 
+                    <section>
                         <div class="chatSelect 
                         selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
@@ -75,11 +104,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
         
-                        <!-- fabio -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_2.jpg" alt="">
@@ -90,11 +118,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
 
-                        <!-- samuele -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_3.jpg" alt="">
@@ -105,11 +132,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
 
-                        <!-- alessandro b -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_4.jpg" alt="">
@@ -120,11 +146,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
 
-                        <!-- alessandro l -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_5.jpg" alt="">
@@ -135,11 +160,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
 
-                        <!-- claudia -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_6.jpg" alt="">
@@ -150,11 +174,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
 
-                        <!-- federico -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_7.jpg" alt="">
@@ -165,11 +188,10 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
 
-                        <!-- davide -->
                         <div class="selezioanto d-flex justify-content-between border-top">
                             <div class="d-flex p-2">
                                 <img class="ms-2" src="img/avatar_8.jpg" alt="">
@@ -180,10 +202,11 @@
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="text-secondary">00:00</span>
+                                <span class="testoPiccolo text-secondary">00:00</span>
                             </div>
                         </div>
                     </section>
+                    -->
                 </div>
             </div>
 
@@ -211,32 +234,43 @@
                 <!-- messaggi -->
                 <div class="chat d-flex flex-column pt-4 px-5">
 
+
+                    <div class=" d-flex align-items-center ps-2 m-2"
+                    
+                        v-for="(element, index) in contacts[activeChat].messages"
+
+                        :class="(element.status === 'sent') ? 'sent verde ms-auto' : 'received bianco'">
+                        <!-- v-bind -->
+
+                        <div class="w-100">
+                            {{element.message}}
+                            <!-- Hai portato a spasso il cane? -->
+                            <span class="testoPiccolo d-flex justify-content-end text-secondary">
+                                {{element.date}}
+                                <!-- 00:00 -->
+                            </span>    
+                        </div>
+                    </div>
+                    
+                    <!-- 
                     <div class="verde d-flex align-items-center ps-2 m-2 ms-auto">
                         <div class="w-100">
                             Hai portato a spasso il cane?
-                            <span class="d-flex justify-content-end">
+                            <span class="testoPiccolo d-flex justify-content-end text-secondary">
                                 00:00
                             </span>    
                         </div>
                     </div>
                     
-                    <div class="verde d-flex align-items-center ps-2 m-2 ms-auto">
-                        <div class="w-100">
-                            Ricordati di stendere i panni
-                            <span class="d-flex justify-content-end">
-                                00:00
-                            </span>    
-                        </div>
-                    </div>
-
                     <div class="bianco d-flex align-items-center ps-2 m-2">
                         <div class="w-100">
                             Tutto fatto!
-                            <span class="d-flex justify-content-end">
+                            <span class="testoPiccolo d-flex justify-content-end text-secondary">
                                 00:00
                             </span>    
                         </div>
                     </div>
+                    -->
 
                 </div>
 
