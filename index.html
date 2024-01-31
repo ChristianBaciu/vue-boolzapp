@@ -68,22 +68,24 @@
 
                         <!-- michele -->
                         <div class="selezioanto d-flex justify-content-between border-top"
-                        
                         v-for="(element,index) in contacts"
-                        >
+                        @click="changeChat(index)">
+                        <!-- al click cambia la chat -->
+                        
                             <div class="d-flex p-2">
-                                <img class="ms-2" src="{{element.contacts.avatar}}" alt="">
+                                <img class="ms-2" :src="`img/avatar${element.avatar}.jpg`" alt="">
                                 <div>
                                     <span class="ms-2">
                                         {{element.name}}
-                                        <!-- Michele -->
                                     </span>
                                     <br>
-                                    <span class="ms-2 text-secondary testoPiccolo">Ultimo messaggio inviato</span>
+                                    <!-- n1 serve per ottenere l'ultimo elemento dell'array (messages) all'interno di (contacts). -->
+                                    <span class="ms-2 text-secondary testoPiccolo">{{element.messages[element.messages.length - 1].message}}</span>
                                 </div>    
                             </div>
                             <div class="me-3 mt-2">
-                                <span class="testoPiccolo text-secondary">00:00</span>
+                                <!-- n1 serve per ottenere l'ultimo elemento dell'array (date) all'interno di (contacts). -->
+                                <span class="testoPiccolo text-secondary">{{element.messages[element.messages.length - 1].date}}</span>
                             </div>
                         </div>
         
@@ -217,7 +219,7 @@
                     <div class="d-flex">
                         <img class="ms-2" src="img/avatar_1.jpg" alt="">
                         <div>
-                            <span class="ms-2">Michele</span>
+                            <span class="ms-2">{{element[changeChat].name}}</span>
                             <br>
                             <span class="ms-2 text-secondary testoPiccolo">Ultimo accesso</span>
                         </div>    
