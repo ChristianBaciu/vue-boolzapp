@@ -5,7 +5,7 @@ createApp({
             contacts:[
                 {   // chat 0
                 name: 'Michele',
-                avatar: '_io',
+                avatar: '_1',
                 visible: true,
                 messages: [{
                         date: '10/01/2020 15:30:55',
@@ -157,16 +157,60 @@ createApp({
                 ],
             }
         ],
-        activeChat: 0  
+
+        activeChat: 0, // chat n.1,2,3,4,5,6,7
+        messaggioMio: '',
+        cercaContatto: '',
+
     }
     },
     created(){
 
     },
     methods:{
+
         changeChat(index){
             this.activeChat = index
-            console.log(index)
+        },
+
+        invioMessaggio(){
+
+            const invioMessaggio = {
+                date: '10/01/2020 15:30:55',
+                message: this.messaggioMio,
+                status: 'sent',
+            }
+
+            if(this.messaggioMio.length === 0){
+                // this.messaggioMio = ''
+            }
+            else{
+                this.contacts[this.activeChat].messages.push(invioMessaggio)
+                this.bot()
+            }
+        },
+
+        bot(){
+            setTimeout(() => {
+
+                const botChat = {
+                    date: '10/01/2020 15:30:55',
+                    message: 'Ok',
+                    status: 'received',
+                }
+                this.contacts[this.activeChat].messages.push(botChat)
+
+            },1000);
         }
-    }
+    },
+
+    computed:{
+
+        filtroContatti(){
+            const ricerca = this.cercaContatto.toLowerCase()
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(ricerca)
+            )
+        },
+    },
 }).mount('#app')

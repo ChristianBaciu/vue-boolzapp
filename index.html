@@ -22,7 +22,8 @@
             <div class="chatPersone">
 
                 <!-- il mio profilo -->
-                <div class="profilo d-flex align-items-center justify-content-between">
+                <div class="profilo
+                d-flex align-items-center justify-content-between">
                     
                     <div>
                         <img class="ms-2" src="img/avatar_io.jpg" alt="">
@@ -37,7 +38,9 @@
                 </div>
 
                 <!-- attiva notifiche -->
-                <div class="notifiche d-flex align-items-center">
+                <div class="notifiche
+                d-flex align-items-center">
+
                     <div>
                         <i class="fa-solid fa-bell-slash ms-2"></i>
                     </div>
@@ -53,45 +56,41 @@
                 </div>
 
                 <!-- cerca nome -->
-                <div class="cerca d-flex align-items-center justify-content-center px-2">
+                <div class="cerca
+                d-flex align-items-center justify-content-center px-2">
+
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa-solid fa-magnifying-glass text-secondary"></i></span>
-                        <input class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <input class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="cercaContatto">
                     </div>
                 </div>
 
                 <!-- contatti n.-->
                 <div class="persone">
+                    
+                    <div class="selezioanto
+                    d-flex justify-content-between border-top"
+                    v-for="(element, index) in filtroContatti" :key="index"
 
-                    <section>
-
-
-                        <!-- michele -->
-                        <div class="selezioanto d-flex justify-content-between border-top"
-                        v-for="(element,index) in contacts"
-                        @click="changeChat(index)">
-                        <!-- al click cambia la chat -->
-                        
-                            <div class="d-flex p-2">
-                                <img class="ms-2" :src="`img/avatar${element.avatar}.jpg`" alt="">
-                                <div>
-                                    <span class="ms-2">
-                                        {{element.name}}
-                                    </span>
-                                    <br>
-                                    <!-- n1 serve per ottenere l'ultimo elemento dell'array (messages) all'interno di (contacts). -->
-                                    <span class="ms-2 text-secondary testoPiccolo">{{element.messages[element.messages.length - 1].message}}</span>
-                                </div>    
-                            </div>
-                            <div class="me-3 mt-2">
-                                <!-- n1 serve per ottenere l'ultimo elemento dell'array (date) all'interno di (contacts). -->
-                                <span class="testoPiccolo text-secondary">{{element.messages[element.messages.length - 1].date}}</span>
-                            </div>
+                    @click="changeChat(index)">
+                    <!-- al click cambia la chat -->
+                    
+                        <div class="d-flex p-2">
+                            <img class="ms-2" :src="`img/avatar${element.avatar}.jpg`" alt="">
+                            <div>
+                                <span class="ms-2">
+                                    {{element.name}}
+                                </span>
+                                <br>
+                                <!-- n1 serve per ottenere l'ultimo elemento dell'array (messages) all'interno di (contacts). -->
+                                <span class="ms-2 text-secondary testoPiccolo">{{element.messages[element.messages.length - 1].message}}</span>
+                            </div>    
                         </div>
-        
-
-
-                    </section>
+                        <div class="me-3 mt-2">
+                            <!-- n1 serve per ottenere l'ultimo elemento dell'array (date) all'interno di (contacts). -->
+                            <span class="testoPiccolo text-secondary">{{element.messages[element.messages.length - 1].date}}</span>
+                        </div>
+                    </div>
 
                     <!-- 
                     <section>
@@ -209,17 +208,19 @@
                         </div>
                     </section>
                     -->
+                    
                 </div>
             </div>
 
             <!-- invia e scrivi -->
             <div class="profiloChat ">
-                <div class="chatProfilo d-flex align-items-center justify-content-between border-start">
-                    
+                <div class="chatProfilo
+                d-flex align-items-center justify-content-between border-start">
+
                     <div class="d-flex">
-                        <img class="ms-2" src="img/avatar_1.jpg" alt="">
+                        <img class="ms-2" :src="`img/avatar${ contacts[activeChat].avatar }.jpg`" alt="">
                         <div>
-                            <span class="ms-2">{{element[changeChat].name}}</span>
+                            <span class="ms-2">{{ contacts[activeChat].name }}</span>
                             <br>
                             <span class="ms-2 text-secondary testoPiccolo">Ultimo accesso</span>
                         </div>    
@@ -230,30 +231,27 @@
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
-
                 </div>
 
                 <!-- messaggi -->
-                <div class="chat d-flex flex-column pt-4 px-5">
-
+                <div class="chat
+                d-flex flex-column pt-4 px-5">
 
                     <div class=" d-flex align-items-center ps-2 m-2"
                     
                         v-for="(element, index) in contacts[activeChat].messages"
 
                         :class="(element.status === 'sent') ? 'sent verde ms-auto' : 'received bianco'">
-                        <!-- v-bind -->
 
                         <div class="w-100">
                             {{element.message}}
-                            <!-- Hai portato a spasso il cane? -->
                             <span class="testoPiccolo d-flex justify-content-end text-secondary">
                                 {{element.date}}
-                                <!-- 00:00 -->
                             </span>    
                         </div>
+
                     </div>
-                    
+        
                     <!-- 
                     <div class="verde d-flex align-items-center ps-2 m-2 ms-auto">
                         <div class="w-100">
@@ -263,6 +261,7 @@
                             </span>    
                         </div>
                     </div>
+                    
                     
                     <div class="bianco d-flex align-items-center ps-2 m-2">
                         <div class="w-100">
@@ -277,18 +276,17 @@
                 </div>
 
                 <!-- tastiera -->
-                <div class="tastiera d-flex align-items-center justify-content-between">
+                <div class="tastiera
+                d-flex align-items-center justify-content-between">
+
                     <i class="fa-regular fa-face-smile"></i>
 
-                    <input class="form-control w-100" placeholder="Scrivi un messaggio">
+                    <input class="form-control w-100" placeholder="Scrivi un messaggio" v-model="messaggioMio" @keyup.enter="invioMessaggio()">
     
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
-
         </div>
-
-        
     </div>
 
     <script src='https://unpkg.com/vue@3'></script>
