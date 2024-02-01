@@ -175,33 +175,66 @@ createApp({
 
         invioMessaggio(){
 
-            const invioMessaggio = {
-                date: '10/01/2020 15:30:55',
-                message: this.messaggioMio,
-                status: 'sent',
-            }
+            let data = new Date()
+            let anno = data.getFullYear()
+            let mese = data.getMonth() + 1
+            let giorno = data.getDate()
 
-            if(this.messaggioMio.length === 0){
-                // this.messaggioMio = ''
-            }
-            else{
-                this.contacts[this.activeChat].messages.push(invioMessaggio)
-                this.bot()
-            }
+            let ora = data.getHours()
+            let minuti = data.getMinutes()
+            let secondi = data.getSeconds()
+
+            this.contacts[this.activeChat].messages.push(
+                {
+                    date: `${giorno}/${mese}/${anno} ${ora}:${minuti}:${secondi}`,
+                    message: this.messaggioMio,
+                    status: 'sent',
+                }
+            )
         },
 
-        bot(){
-            setTimeout(() => {
 
-                const botChat = {
-                    date: '10/01/2020 15:30:55',
-                    message: 'Ok',
-                    status: 'received',
-                }
-                this.contacts[this.activeChat].messages.push(botChat)
 
-            },1000);
-        }
+
+
+
+
+
+
+
+
+
+
+
+        // invioMessaggio(){
+
+        //     const invioMessaggio = {
+        //         date: '10/01/2020 15:30:55',
+        //         message: this.messaggioMio,
+        //         status: 'sent',
+        //     }
+
+        //     if(this.messaggioMio.length === 0){
+        //         // this.messaggioMio = ''
+        //     }
+        //     else{
+        //         this.contacts[this.activeChat].messages.push(invioMessaggio)
+        //         this.bot()
+        //     }
+        // },
+
+        // bot(){
+        //     setTimeout(() => {
+
+        //         const botChat = {
+        //             date: '10/01/2020 15:30:55',
+        //             message: 'Ok',
+        //             status: 'received',
+        //         }
+        //         this.contacts[this.activeChat].messages.push(botChat)
+
+        //     },1000);
+        // }
     },
 
     computed:{
