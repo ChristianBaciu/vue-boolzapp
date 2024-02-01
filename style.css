@@ -107,11 +107,13 @@ img{
 .verde{
     background-color: #d2f5b9;
     width: 40%;
+    padding: 30px;
 }
 
 .bianco{
     background-color: #ffffff;
     width: 40%;
+    padding: 30px;
 }
 
 /* tastiera */
@@ -125,4 +127,21 @@ img{
     font-size: 20px;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.bottoneChat{
+    background-color: transparent;
+    padding: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.bottoneChat::before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid #6c757d;
+    border-right: 1px solid #6c757d;
+    position: absolute;
+    transform: translate(-50%) rotate(135deg);
 }
